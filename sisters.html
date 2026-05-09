@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Amazing Sister 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+    background: url("1.jpg") no-repeat center center/cover;
+    position:relative;
+}
+
+/* Dark + pink aesthetic overlay */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(255,105,180,0.25));
+    backdrop-filter:blur(8px);
+    z-index:-1;
+}
+
+/* Glass effect container */
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border-radius:30px;
+    margin:50px auto;
+    width:90%;
+    max-width:1100px;
+    padding:60px 35px;
+    box-shadow:0 0 60px rgba(255,105,180,0.35);
+    animation:fadeIn 1.8s ease;
+}
+
+/* Hero */
+.hero h1{
+    font-size:4rem;
+    font-weight:800;
+    margin-bottom:25px;
+    text-shadow:0 0 25px rgba(255,105,180,1);
+}
+
+.hero p{
+    font-size:1.2rem;
+    max-width:750px;
+    margin:auto;
+    line-height:1.9;
+    opacity:0.95;
+}
+
+/* Buttons */
+.buttons{
+    margin-top:45px;
+}
+
+button{
+    padding:15px 40px;
+    margin:12px;
+    border:none;
+    border-radius:50px;
+    font-size:1rem;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff4f81,#ff9a9e);
+    color:white;
+    transition:0.4s ease;
+    box-shadow:0 10px 30px rgba(255,79,129,0.6);
+}
+
+button:hover{
+    transform:scale(1.12);
+    box-shadow:0 15px 50px rgba(255,79,129,1);
+}
+
+/* Hidden message */
+.hidden-message{
+    display:none;
+    margin-top:35px;
+    font-size:1.5rem;
+    animation:fadeIn 1s ease-in-out;
+}
+
+/* Gallery */
+.gallery h2{
+    margin-bottom:45px;
+    font-size:2.3rem;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.gallery-grid img{
+    width:100%;
+    border-radius:25px;
+    transition:0.5s;
+    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.08);
+    box-shadow:0 20px 60px rgba(255,105,180,0.9);
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:22px;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+footer{
+    padding:40px 20px;
+    font-size:1rem;
+    opacity:0.85;
+}
+</style>
+</head>
+
+<body>
+
+<section class="glass hero">
+    <h1>To My Beautiful Sister 💕</h1>
+    <p>
+        You are strong, inspiring and deeply loved.
+        We care about your happiness, your peace, and your wellbeing every single day.
+        This little piece is just to remind you how powerful and amazing you are ✨.
+        Today is a celebration of everything you've achieved and the incredible person you are.
+    </p>
+
+    <div class="buttons">
+        <button onclick="showMessage();playMusic();startHearts()">Unwrap Your Birthday Wish 🎁</button>
+    </div>
+
+    <div class="hidden-message" id="secretMessage">
+        No matter what life brings, we will always be proud of you.
+        May your heart stay light, your mind stay peaceful, and your dreams come true.
+        God bless you My lovely Sister,HAPPY BIRTHDAY MY LOVE🌸💖
+    </div>
+</section>
+
+<audio id="Birthday-music" loop>
+    <source src="Tommy Lyon - All that I've known (Lyrics) [R2A0ab26Xxc].mp3 "
+    type="audio/mpeg">
+</audio>
+<script>
+    function playMusic(){
+        var audio = document.getElementById("Birthday-music");
+        audio.play();
+    }
+</script>
+
+<section class="glass gallery">
+    <h2>Your Beautiful Memories 📸<br>A Testament to Your Journey.</h2>
+    <div class="gallery-grid">
+        <img src="1.jpg">
+        <img src="2.jpg">
+        <img src="3.jpg" style="height: 100%;">
+        <img src="4.jpg">
+        <img src="5.jpg">
+        <img src="7.jpg">
+        <img src="8.jpg">
+        <img src="9.jpg">
+        <img src="10.jpg">
+        <img src="11.jpg" style="height: 100%;">
+        <img src="12.jpg">
+        <img src="13.jpg">
+        <img src="6.jpg" style="width: 200%;">
+    </div>
+</section>
+
+<footer>
+   <b>Made with endless love by MOM'S last LOVE😝💞</b> 
+</footer>
+
+<script>
+function showMessage(){
+    document.getElementById("secretMessage").style.display="block";
+}
+
+function startHearts(){
+    for(let i=0;i<30;i++){
+        let heart=document.createElement("div");
+        const emojis= ["💖","🎉","🎈","🎁","🎊","🥳","💌","😘","❤️","🙏"];
+        let randomEmoji= emojis[Math.floor(Math.random()*emojis.length)];
+        heart.innerHTML=randomEmoji;
+        heart.classList.add("heart");
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.animationDuration=(Math.random()*3+3)+"s";
+        heart.style.fontSize=(Math.random()*15+20)+"px";
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{heart.remove();},6000);
+    }
+}
+</script>
+
+</body>
+</html>
